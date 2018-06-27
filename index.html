@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Personal Accounting</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/inputs.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <!-- Custom fonts for this template -->
+
+
+</head>
+<!-- Introduction and salary input -->
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header">
+                <h1 id="intro">Hello Yani Drenchev</h1>
+            </div>
+            <form action="">
+                <div class="wrap center">
+                    <div class="wrap-label">
+                        <label for="name">What is your mothly income?</label>
+                        <p class="iconicfill-pen-alt2"></p>
+                    </div>
+                    <input type="text" id="salary" placeholder="1000lv">
+                </div>
+            </form>
+            <a class="button1" id="continue2">Contiue</a>
+        </div>
+    </header>
+    <!-- Main page -->
+    <aside class="right-aside">
+        <h1>Your account balance</h1>
+        <div class="balance" id="balance">1000</div>
+        <div class="transactions">
+            <div id="transactions_history">
+
+            </div>
+        </div>
+    </aside>
+    <main>
+        <div class="main-header" >
+            <h1 id="intro2">Yani Drenchev</h1>
+            <h2>Add any spending or income</h2>
+        </div>
+        <div class="income">
+            <form action="">
+                <div class="wrap center">
+                    <div class="wrap-label">
+                        <label for="name">Maby you won from the lotary?</label>
+                        <p class="iconicfill-pen-alt2"></p>
+                    </div>
+                    <input type="text" id="incomeVal" placeholder="1500lv">
+                    <p class="error">Please enter a valid number</p>
+                    <a class="button1" id="income-btn">Add</a>
+                </div>
+            </form>
+        </div>
+        <div class="spendings">
+            <form action="">
+                <div class="wrap center">
+                    <div class="wrap-label">
+                        <label for="name">For what have you spend your money</label>
+                        <p class="iconicfill-pen-alt2"></p>
+                    </div>
+                    <input type="text" id="spendedMoney" placeholder="50lv">
+                    <p class="error">Please enter a valid number</p>
+                    <a class="button1" id="spended">Add</a>
+                </div>
+            </form>
+        </div>
+        <div class="mothlySpendings">
+            <form action="">
+                <div class="wrap center">
+                    <div class="wrap-label">
+                        <label for="name">Do you pay rent or some bills?</label>
+                        <p class="iconicfill-pen-alt2"></p>
+                    </div>
+                    <input type="text" placeholder="1000lv" id="mothlySpendingsVal">
+                    <p class="error">Please enter a valid number</p>
+                    <a class="button1" id="mothlySpendings-btn">Add</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- Login Page -->
+    <!-- <div class="login-page">
+            <div class="form">
+                <h1>Hello, I am your personal accounting assistant</h1>
+                <h2>Please tell me who you are</h2>              
+              <form class="login-form">
+                <input type="text" placeholder="First Name" id="firstName"/>
+                <input type="text" placeholder="Last Name" id = "lastName"/>
+                <button id = "continue">Continue</button>                    
+              </form>
+            </div>
+    </div> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/inputs.js"></script>
+</body>
+
+</html>

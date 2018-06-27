@@ -1,0 +1,60 @@
+.header-container {
+    background: #0074D9;
+    width: 100vw;
+    height: 80vh;
+}
+
+.header-container {
+    text-align: center;
+    padding-top: 10%;
+}
+
+.header-container h1 {
+    margin-bottom: 3%;
+}
+
+.header-container input {
+    margin-top: 3%;
+}
+
+.right-aside {
+    float: left;
+    height: 60vh;
+    width: 20%;
+    background: #92B558;
+    color: white;
+    text-align: center;
+}
+
+.balance {
+    font-size: 40px;
+}
+
+main label {
+    color: black;
+}
+
+main {
+    text-align: center;
+    align-content: center;
+}
+main h2 {
+    margin: 3%;
+}
+.button-success {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(28, 184, 65);
+   
+}
+.main-header{
+    margin-bottom: 5%;
+    font-size: 40px;
+    font-weight: 500;
+}
+.error{
+    display: none;
+    color: red;
+    size: 20px;
+}
