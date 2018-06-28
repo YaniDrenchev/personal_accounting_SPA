@@ -8,16 +8,17 @@ body {
     height: 100vh;
   }
   main {    
-    min-width: 75%;    
-    padding: 50px;
+    
+    padding-top: 50px;
     margin: 0 auto;
     background: #fff;
   }
 
   h1 {
     padding: 50px 0;
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
+    color: black;
   }
   
   p {
@@ -60,10 +61,6 @@ main label {
     color: black;
 }
 
-main {
-    text-align: center;
-    align-content: center;
-}
 main h2 {
     margin: 3%;
 }
@@ -74,7 +71,7 @@ main h2 {
     background: rgb(28, 184, 65);
    
 }
-/* .main-header{
+.main-header{
     margin-bottom: 5%;
     font-size: 25px;
     font-weight: 500;
@@ -83,20 +80,15 @@ main h2 {
 .error{
     display: none;
     color: red;
-    size: 20px;
+    font-size: 20px;
+    font-weight:300;
 } 
- .main-inputs div{
-    float: left;
-    margin-left: 2%;
-}
-.main-inputs{
-    content: "";
-    display: table;
-    clear: both;
-} */
+
 aside{
     float: left;
+    border-radius: 3%;
 }
 main{
-    float: right;
+    display: inline-block;
+    width: 40%;
 }
