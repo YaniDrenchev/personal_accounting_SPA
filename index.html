@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="css/inputs.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/spendingInformation.css">
     <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/tabs.css">
     <!-- Custom fonts for this template -->
 
 
@@ -24,10 +26,10 @@
 <!-- Introduction and salary input -->
 
 <body>
-    <header>
+    <!-- <header>
         <div class="header-container">
             <div class="header">
-                <h1 id="intro">Hello Yani Drenchev</h1>
+                <h1 id="intro">Hello U</h1>
             </div>
             <form action="">
                 <div class="wrap center">
@@ -40,9 +42,15 @@
             </form>
             <a class="button1" id="continue2">Contiue</a>
         </div>
-    </header>
+    </header> -->
     <!-- Main page -->
-    <aside class="right-aside">
+    <header>
+        <div class="main-header">
+            <h1 id="intro2">Yani Drenchev</h1>
+            <h2>Add any spending or income</h2>
+        </div>
+    </header>
+    <aside class="left-aside">
         <h1>Your account balance</h1>
         <div class="balance" id="balance">1000</div>
         <div class="transactions">
@@ -52,10 +60,6 @@
         </div>
     </aside>
     <main>
-        <div class="main-header" >
-            <h1 id="intro2">Yani Drenchev</h1>
-            <h2>Add any spending or income</h2>
-        </div>
         <div class="income">
             <form action="">
                 <div class="wrap center">
@@ -63,12 +67,13 @@
                         <label for="name">Maby you won from the lotary?</label>
                         <p class="iconicfill-pen-alt2"></p>
                     </div>
-                    <input type="text" id="incomeVal" placeholder="1500lv">
+                    <input type="text" id="incomeVal"x placeholder="1500lv">
                     <p class="error">Please enter a valid number</p>
                     <a class="button1" id="income-btn">Add</a>
                 </div>
             </form>
         </div>
+
         <div class="spendings">
             <form action="">
                 <div class="wrap center">
@@ -77,11 +82,14 @@
                         <p class="iconicfill-pen-alt2"></p>
                     </div>
                     <input type="text" id="spendedMoney" placeholder="50lv">
-                    <p class="error">Please enter a valid number</p>
+                    <p class="error" id="error">Please enter a valid number</p>
                     <a class="button1" id="spended">Add</a>
                 </div>
             </form>
         </div>
+
+
+
         <div class="mothlySpendings">
             <form action="">
                 <div class="wrap center">
@@ -95,22 +103,27 @@
                 </div>
             </form>
         </div>
+
+
     </main>
     <!-- Login Page -->
+    <!-- Start Page -->
     <!-- <div class="login-page">
-            <div class="form">
-                <h1>Hello, I am your personal accounting assistant</h1>
-                <h2>Please tell me who you are</h2>              
-              <form class="login-form">
-                <input type="text" placeholder="First Name" id="firstName"/>
-                <input type="text" placeholder="Last Name" id = "lastName"/>
-                <button id = "continue">Continue</button>                    
-              </form>
-            </div>
+        <div class="form">
+            <h1>Hello, I am your personal accounting assistant</h1>
+            <h2>Please tell me who you are</h2>
+            <form class="login-form">
+                <input type="text" placeholder="First Name" id="firstName" />
+                <input type="text" placeholder="Last Name" id="lastName" />
+                <a class="button1" id="continue">Contiue</a>
+            </form>
+        </div>
     </div> -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/main.js"></script>
     <script src="js/inputs.js"></script>
+    <script src="js/tabs.js"></script>
 </body>
 
 </html>

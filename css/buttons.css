@@ -12,11 +12,12 @@ a.button1 {
     text-align: center;
     transition: all 0.2s;
     cursor: pointer;
+    background-color:rgb(28, 184, 65);  ;
 }
 
 a.button1:hover {
     color: #000000;
-    background-color: #FFFFFF;
+    background-color: gray;
 }
 
 

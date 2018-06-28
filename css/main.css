@@ -1,3 +1,29 @@
+
+body {
+    font: 14px/1 'Open Sans', sans-serif;
+    color: #555;
+    background: white;
+  }
+  html, body {
+    height: 100vh;
+  }
+  main {    
+    min-width: 75%;    
+    padding: 50px;
+    margin: 0 auto;
+    background: #fff;
+  }
+
+  h1 {
+    padding: 50px 0;
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  p {
+    margin: 0 0 20px;
+    line-height: 1.5;
+  }  
 .header-container {
     background: #0074D9;
     width: 100vw;
@@ -17,10 +43,10 @@
     margin-top: 3%;
 }
 
-.right-aside {
+.left-aside {
     float: left;
-    height: 60vh;
-    width: 20%;
+    height: 100vh;
+    width: 15%;
     background: #92B558;
     color: white;
     text-align: center;
@@ -48,13 +74,29 @@ main h2 {
     background: rgb(28, 184, 65);
    
 }
-.main-header{
+/* .main-header{
     margin-bottom: 5%;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: 500;
+    text-align: center;
 }
 .error{
     display: none;
     color: red;
     size: 20px;
+} 
+ .main-inputs div{
+    float: left;
+    margin-left: 2%;
+}
+.main-inputs{
+    content: "";
+    display: table;
+    clear: both;
+} */
+aside{
+    float: left;
+}
+main{
+    float: right;
 }
