@@ -4,19 +4,19 @@ var monthlySpend = 0;
 var earned = 0;
 var addToSummarySpend = function(moneySpend, reason){
     totalSpend = totalSpend + parseInt(moneySpend);
-    $('.spendings-section .Total h1').html("Total: " + totalSpend);
+    $('.spendings-section #totalMoneySpend').html( "" + totalSpend);
     var $itemToAppend = $('<h2>' + moneySpend + ' BGN ' + 'on ' + reason + '</h2>');
     $('.spendings-section .content').append($itemToAppend);
 }
 var addToSummaryMontly  = function(moneySpend, reason){
     monthlySpend = monthlySpend + parseInt(moneySpend);
-    $('.monthly-section .Total h1').html("Total: " + monthlySpend);
+    $('.monthly-section #totalMoneyMonthly').html(monthlySpend);
     var $itemToAppend = $('<h2>' + moneySpend + ' BGN ' + 'on ' + reason + '</h2>');
     $('.monthly-section .content').append($itemToAppend);
 }
 var addToSummaryIncome  = function(moneyEarned, reason){
     earned = earned + parseInt(moneyEarned);
-    $('.income-section .Total h1').html("Total: " + earned);
+    $('.income-section #totalMoneyIncome').html(earned);
     var $itemToAppend = $('<h2>' + moneyEarned + ' BGN ' + 'from ' + reason + '</h2>');
     $('.income-section .content').append($itemToAppend);
 }
@@ -59,10 +59,12 @@ $(document).ready(function () {
             if(accountBalance <= 100){
                 $('.overlay').css({'visibility': 'visible',
                  'opacity': '1'});                 
-                 $('.popup').css('display', 'block');                       
+                 $('.popup').css('display', 'block');         
+                              
             }
+            addToSummarySpend($spendedMoney, $reason); 
         }
-        addToSummarySpend($spendedMoney, $reason);
+       
     })
     $('#mothlySpendings-btn').on("click", function () {
         if ($('#mothlySpendingsVal').val() == '' && $('#monthly-select').val() == "") {
@@ -85,10 +87,12 @@ $(document).ready(function () {
             if(accountBalance <= 100){
                 $('.overlay').css({'visibility': 'visible',
                  'opacity': '1'});
-                 $('.popup').css('display', 'block');                           
+                 $('.popup').css('display', 'block');         
+                           
             }
+            addToSummaryMontly($spendedMoney, $reason);      
         }
-        addToSummaryMontly($moneySpend, $reason);
+
     })
     $('#income-btn').on("click", function () {
         if ($('#incomeVal').val() == '' && $('#income-select').val() == "") {
@@ -109,10 +113,11 @@ $(document).ready(function () {
             "BGN " + "from " + $reason + "</div>");
             accountBalance = parseInt(accountBalance) + parseInt($spendedMoney);
             $('#balance').html(accountBalance + "BGN");
+            addToSummaryIncome($spendedMoney, $reason);
         }                  
-        addToSummaryIncome($spendedMoney, $reason);
+       
     })
-
+    $(".progress-bar").loading();	
 })
     //error message reset
     $('#mothlySpendingsVal').on("keypress", function () {

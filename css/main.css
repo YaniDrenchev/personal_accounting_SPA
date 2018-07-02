@@ -58,7 +58,7 @@ p {
 }
 
 #balance {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 main label {
@@ -108,7 +108,7 @@ section {
     bottom: 27em;
 }
 
-.summary div {
+.summary>div {
     width: 20em;
     border-radius: 1.12em;
     background-color: rgb(28, 184, 65);
@@ -135,7 +135,20 @@ section {
     margin-left: 1em;
 }
 .summary h2 {
-    margin: 0;
+    margin: auto;
+}
+.summary .Total>h1{    
+    display: inline-block;
+}   
+.progress{
+   
+    position: relative;
+    bottom: 300px;
+    left: 32%;
+}
+.progress-bar{
+    display: inline-block;
+    margin-right: 9em;
 }
 
 @media only screen and (max-width: 1680px) {
@@ -155,13 +168,14 @@ section {
         float: none;
         margin: 0;
     }
-    .summary .Total {
+    .summary .Total {    
         float: left;
     }
     .content{
         margin-left: 1%;
         float: right;
     }
+    
 }
 
 @media only screen and (max-width: 880px) {
@@ -176,6 +190,5 @@ section {
     }
     .content{
         margin-left: 1%;
-        float: right;
     }
 }

@@ -11,14 +11,17 @@
     <title>Personal Accounting</title>
 
     <link rel="stylesheet" href="css/inputs.css">
+    <link rel="stylesheet" href="css/odometer-theme-default.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/input_select.css">
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/popUp.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/jQuery-plugin-progressbar.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/HubSpot/odometer/master/themes/odometer-theme-train-station.css">
+
+
 </head>
 <!-- Introduction and salary input -->
 
@@ -51,6 +54,7 @@
     <aside class="left-aside">
         <h1>Your account balance</h1>
         <div class="odometer" id="balance">1000</div>
+        <div class="progress-bar" data-percent="100" data-duration="1000" data-color="#ccc,red"></div>
         <div class="transactions">
             <div id="transactions_history">
             </div>
@@ -144,6 +148,7 @@
                 </div>
                 <div class="Total">
                     <h1>Total: </h1>
+                    <h1 id="totalMoneySpend">0</h1>
                 </div>
             </div>
 
@@ -154,7 +159,7 @@
                 </div>
                 <div class="Total">
                     <h1>Total: </h1>
-
+                    <h1 id="totalMoneyMonthly">0</h1>
                 </div>
             </div>
             <div class="income-section">
@@ -163,11 +168,17 @@
 
                 </div>
                 <div class="Total">
-                    <h1>Total: </h1>
+                    <h1 class="totalText">Total: </h1>
+                    <h1 id="totalMoneyIncome">0</h1>
 
                 </div>
             </div>
         </section>
+        <div class="progress">
+            <div class="progress-bar" data-percent="1" data-duration="1000" data-color="#ccc,red"></div>
+            <div class="progress-bar" data-percent="0" data-duration="1000" data-color="#ccc,red"></div>
+            <div class="progress-bar" data-percent="0" data-duration="1000" data-color="#white,green"></div>
+        </div>
     </main>
     <!-- Login Page -->
     <!-- Start Page -->
@@ -185,7 +196,7 @@
     </div> -->
 
     <footer>
-        <div class="footer">    
+        <div class="footer">
             <div id="button"></div>
             <div id="container">
                 <div id="cont">
@@ -197,10 +208,11 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://raw.githubusercontent.com/HubSpot/odometer/v0.4.6/odometer.min.js"></script>
+    <script src="js/odometer.min.js"></script>
     <script src="js/login.js"></script>
     <script src="js/main.js"></script>
     <script src="js/inputs.js"></script>
+    <script src="js/jQuery-plugin-progressbar.js"></script>
 </body>
 
 </html>
