@@ -1,4 +1,25 @@
 var accountBalance = 1000;
+var totalSpend = 0;
+var monthlySpend = 0;
+var earned = 0;
+var addToSummarySpend = function(moneySpend, reason){
+    totalSpend = totalSpend + parseInt(moneySpend);
+    $('.spendings-section .Total h1').html("Total: " + totalSpend);
+    var $itemToAppend = $('<h2>' + moneySpend + ' BGN ' + 'on ' + reason + '</h2>');
+    $('.spendings-section .content').append($itemToAppend);
+}
+var addToSummaryMontly  = function(moneySpend, reason){
+    monthlySpend = monthlySpend + parseInt(moneySpend);
+    $('.monthly-section .Total h1').html("Total: " + monthlySpend);
+    var $itemToAppend = $('<h2>' + moneySpend + ' BGN ' + 'on ' + reason + '</h2>');
+    $('.monthly-section .content').append($itemToAppend);
+}
+var addToSummaryIncome  = function(moneyEarned, reason){
+    earned = earned + parseInt(moneyEarned);
+    $('.income-section .Total h1').html("Total: " + earned);
+    var $itemToAppend = $('<h2>' + moneyEarned + ' BGN ' + 'from ' + reason + '</h2>');
+    $('.income-section .content').append($itemToAppend);
+}
 $(document).ready(function () {
     // here you enter your salary and the window fades out
     $("#continue2").on("click", function () {
@@ -28,17 +49,20 @@ $(document).ready(function () {
             $('.spendings .error').html("Please enter a valid value ")
                 .css('display', 'block');
         } else {
-            var spendedMoney = $('#spendedMoney').val();
+            var $spendedMoney = $('#spendedMoney').val();
+            var $reason = $( "#spended-select option:selected" ).text();
             $('#transactions_history')
-            .append("<div>" + "You spend " + spendedMoney + 
-            "BGN " + "for " + $('#spended-select').val()+ "</div>");
-            accountBalance = parseInt(accountBalance) - parseInt(spendedMoney);
+            .append("<div>" + "You spend " + $spendedMoney + 
+            "BGN " + "for " + $reason + "</div>");
+            accountBalance = parseInt(accountBalance) - parseInt($spendedMoney);
             $('#balance').html(accountBalance + "BGN");
             if(accountBalance <= 100){
-                $('#modal').css('display', 'block');
-            
+                $('.overlay').css({'visibility': 'visible',
+                 'opacity': '1'});                 
+                 $('.popup').css('display', 'block');                       
             }
         }
+        addToSummarySpend($spendedMoney, $reason);
     })
     $('#mothlySpendings-btn').on("click", function () {
         if ($('#mothlySpendingsVal').val() == '' && $('#monthly-select').val() == "") {
@@ -51,17 +75,20 @@ $(document).ready(function () {
             $('.mothlySpendings .error').html("Please enter a valid value ")
                 .css('display', 'block');
         } else {
-            var spendedMoney = $('#mothlySpendingsVal').val();
+            var $spendedMoney = $('#mothlySpendingsVal').val();
+            var $reason = $( "#monthly-select option:selected" ).text();
             $('#transactions_history')
-            .append("<div>" + "You spend " + spendedMoney + 
-            "BGN " + "for " + $('#monthly-select').val()+ "</div>");
-            accountBalance = parseInt(accountBalance) - parseInt(spendedMoney);
+            .append("<div>" + "You spend " + $spendedMoney + 
+            "BGN " + "for " + $reason + "</div>");
+            accountBalance = parseInt(accountBalance) - parseInt($spendedMoney);
             $('#balance').html(accountBalance + "BGN");
             if(accountBalance <= 100){
-                $('#modal').css('display', 'block');
-            
+                $('.overlay').css({'visibility': 'visible',
+                 'opacity': '1'});
+                 $('.popup').css('display', 'block');                           
             }
         }
+        addToSummaryMontly($moneySpend, $reason);
     })
     $('#income-btn').on("click", function () {
         if ($('#incomeVal').val() == '' && $('#income-select').val() == "") {
@@ -75,21 +102,18 @@ $(document).ready(function () {
             .css('display', 'block');
         }
         else {
-            var spendedMoney = $('#incomeVal').val();
+            var $reason = $( "#income-select option:selected" ).text();
+            var $spendedMoney = $('#incomeVal').val();
             $('#transactions_history')
-            .append("<div>" + "You earned " + spendedMoney + 
-            "BGN " + "from " + $('#income-select').val()+ "</div>");
-            accountBalance = parseInt(accountBalance) + parseInt(spendedMoney);
+            .append("<div>" + "You earned " + $spendedMoney + 
+            "BGN " + "from " + $reason + "</div>");
+            accountBalance = parseInt(accountBalance) + parseInt($spendedMoney);
             $('#balance').html(accountBalance + "BGN");
-            if(accountBalance <= 100){
-                $('#modal').css('display', 'block');
-            
-            }
-        }
-
-       
-            
+        }                  
+        addToSummaryIncome($spendedMoney, $reason);
     })
+
+})
     //error message reset
     $('#mothlySpendingsVal').on("keypress", function () {
         $('.mothlySpendings .error').css('display', 'none');
@@ -103,5 +127,8 @@ $(document).ready(function () {
     $('#salary').on("keypress", function () {
         $('.header-container .error').css('display', 'none');
     })
-
-})
+    $('.close').on('click', function(){
+        $('.overlay').css({'visibility': 'hidden',
+                 'opacity': '0'});                         
+        $('.popup').css('display', 'none');    
+    })

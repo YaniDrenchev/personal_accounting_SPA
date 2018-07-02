@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/input_select.css">
     <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/popUp.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/HubSpot/odometer/master/themes/odometer-theme-train-station.css">
 </head>
 <!-- Introduction and salary input -->
 
@@ -46,7 +50,7 @@
     </header>
     <aside class="left-aside">
         <h1>Your account balance</h1>
-        <div class="balance" id="balance">1000</div>
+        <div class="odometer" id="balance">1000</div>
         <div class="transactions">
             <div id="transactions_history">
             </div>
@@ -121,12 +125,49 @@
                 </form>
             </div>
         </div>
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Some text in the Modal..</p>
+        <!-- Popup warning, it shows when the account balance is less then 100 -->
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Whoah!</h2>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                    Easy, you don't have money! Start saving!
+                </div>
             </div>
         </div>
+        <!-- Summary of all the spended and earned money -->
+        <section class="summary">
+            <div class="spendings-section">
+                <h1>You have spend: </h1>
+                <div class="content">
+
+                </div>
+                <div class="Total">
+                    <h1>Total: </h1>
+                </div>
+            </div>
+
+            <div class="monthly-section">
+                <h1>You spend monthly: </h1>
+                <div class="content">
+
+                </div>
+                <div class="Total">
+                    <h1>Total: </h1>
+
+                </div>
+            </div>
+            <div class="income-section">
+                <h1>You earned: </h1>
+                <div class="content">
+
+                </div>
+                <div class="Total">
+                    <h1>Total: </h1>
+
+                </div>
+            </div>
+        </section>
     </main>
     <!-- Login Page -->
     <!-- Start Page -->
@@ -142,7 +183,21 @@
             </form>
         </div>
     </div> -->
+
+    <footer>
+        <div class="footer">    
+            <div id="button"></div>
+            <div id="container">
+                <div id="cont">
+                    <div class="footer_center">
+                        <h3>Created BY Yani Drenchev for JAVA-ALPHA Academy </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://raw.githubusercontent.com/HubSpot/odometer/v0.4.6/odometer.min.js"></script>
     <script src="js/login.js"></script>
     <script src="js/main.js"></script>
     <script src="js/inputs.js"></script>
