@@ -176,6 +176,13 @@ section {
         margin-left: 12px; 
     }
 }
+@media only screen and (max-width: 1400px){
+    .jqumeter{
+       
+        width: 170px;
+        margin-left: 34px; 
+    }
+}
 
 @media only screen and (max-width: 1200px){
     .jqumeter{
