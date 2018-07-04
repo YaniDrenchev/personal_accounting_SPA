@@ -26,24 +26,7 @@
 <!-- Introduction and salary input -->
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="header">
-                <h1 id="intro">Hello, </h1>
-            </div>
-            <form action="">
-                <div class="wrap center" id="introPage">
-                    <div class="wrap-label">
-                        <label for="name">What is your mothly income?</label>
-                        <p class="iconicfill-pen-alt2"></p>
-                    </div>
-                    <input type="text" id="salary" placeholder="1000lv">
-                </div>
-            </form>
-            <p class="error">Please enter a valid salary</p>
-            <a class="button1" id="continue2">Continue</a>
-        </div>
-    </header>
+
     <!-- Main page -->
     <header>
         <div class="main-header">
@@ -54,7 +37,7 @@
     <aside class="left-aside">
         <h1>Your account balance</h1>
         <div class="odometer" id="balance">1000</div>
-        <div id="jqmeter-container1"class="jqumeter"></div>
+        <div id="jqmeter-container1" class="jqumeter"></div>
         <div class="transactions">
             <div id="transactions_history">
             </div>
@@ -189,6 +172,23 @@
             </form>
         </div>
     </div>
+    <!-- Salary page -->
+    <div class="header-container">
+        <div class="header">
+            <h1 id="intro">Hello, </h1>
+        </div>
+        <form action="">
+            <div class="wrap center" id="introPage">
+                <div class="wrap-label">
+                    <label for="name">What is your mothly income?</label>
+                    <p class="iconicfill-pen-alt2"></p>
+                </div>
+                <input type="text" id="salary" placeholder="1000lv">
+            </div>
+        </form>
+        <p class="error">Please enter a valid salary</p>
+        <a class="button1" id="continue2">Continue</a>
+    </div>
     <!-- Start page end -->
     <footer>
         <div class="footer">
@@ -202,14 +202,16 @@
             </div>
         </div>
     </footer>
-  
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="http://www.gerardolarios.com/plugins-and-tools/jqmeter/js/jqmeter.min.js"></script>   
+    <script src="http://www.gerardolarios.com/plugins-and-tools/jqmeter/js/jqmeter.min.js"></script>
     <script src="js/odometer.min.js"></script>
     <script src="js/login.js"></script>
     <script src="js/main.js"></script>
     <script src="js/inputs.js"></script>
-   
+
 </body>
 
 </html>

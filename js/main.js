@@ -39,14 +39,14 @@ var addToSummaryIncome  = function(moneyEarned, reason){
     var $itemToAppend = $('<h2>' + moneyEarned + ' BGN ' + 'from ' + reason + '</h2>');
     $('.income-section .content').append($itemToAppend);
 }
-$(document).ready(function () {
-    
+$(document).ready(function () {    
     // here you enter your salary and the window fades out
-    $("#continue2").on("click", function () {
+    $("#continue2").on("click submit", function (e) {
         // validation
         if ($('#salary').val() == "" || $('#salary').val().length < 2) {
             $('.header-container .error').css('display', 'block');
         } else {
+            $('main').css('display','block');
             $('.header-container').animate({
                 opacity: 0.05,
                 padding: 0.05,
@@ -60,7 +60,7 @@ $(document).ready(function () {
         loadProgressBar(accountBalance1,accountBalance);
     });
 
-    $('#spended').on("click", function () {
+    $('#spended').on("click submit", function () {
         if ($('#spendedMoney').val() == '' && $('#spended-select').val() == "") {
             $('.spendings .error').html("Please enter a valid value and reason ")
                 .css('display', 'block');
@@ -89,7 +89,7 @@ $(document).ready(function () {
         }
        
     })
-    $('#mothlySpendings-btn').on("click", function () {
+    $('#mothlySpendings-btn').on("click submit", function () {
         if ($('#mothlySpendingsVal').val() == '' && $('#monthly-select').val() == "") {
             $('.mothlySpendings .error').html("Please enter a valid value and reason ")
                 .css('display', 'block');
@@ -118,7 +118,7 @@ $(document).ready(function () {
         }
 
     })
-    $('#income-btn').on("click", function () {
+    $('#income-btn').on("click submit", function () {
         if ($('#incomeVal').val() == '' && $('#income-select').val() == "") {
             $('.income .error').html("Please enter a valid value and reason ")
             .css('display', 'block');
