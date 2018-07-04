@@ -51,7 +51,7 @@ p {
 .left-aside {
     float: left;
     height: 100vh;
-    width: 15%;
+    width: 18%;
     background: #92B558;
     color: white;
     text-align: center;
@@ -97,7 +97,7 @@ aside {
 
 main {
     display: inline-block;
-    width: 85%;
+    width: 80%;
 }
 
 section {
@@ -140,16 +140,6 @@ section {
 .summary .Total>h1{    
     display: inline-block;
 }   
-.progress{
-   
-    position: relative;
-    bottom: 300px;
-    left: 32%;
-}
-.progress-bar{
-    display: inline-block;
-    margin-right: 9em;
-}
 
 @media only screen and (max-width: 1680px) {
     .main-inputs {
@@ -175,9 +165,37 @@ section {
         margin-left: 1%;
         float: right;
     }
-    
+    h1{
+        font-size: 20px;   
+    }
+    .jqumeter{
+        float: left;
+        width: 250px;
+        margin-left: 12px; 
+    }
 }
 
+@media only screen and (max-width: 1200px){
+    .jqumeter{
+        float: left;
+        width: 150px;
+        margin-left: 34px; 
+    }
+}
+@media only screen and (max-width: 1060px){
+    .jqumeter{
+        float: left;
+        width: 110px;
+        margin-left: 40px; 
+    }
+}   
+@media only screen and (max-width: 860px){
+    .jqumeter{
+        float: left;
+        width: 80px;
+        margin-left: 40px; 
+    }
+} 
 @media only screen and (max-width: 880px) {
     .summary {
         margin: 0;
@@ -190,5 +208,14 @@ section {
     }
     .content{
         margin-left: 1%;
+    }
+    .progress{
+        display: none;
+    }
+    
+}
+@media only screen and (max-width: 700px){
+    .jqumeter{
+        display: none;
     }
 }

@@ -1,7 +1,26 @@
-var accountBalance = 1000;
+var accountBalance1;
+var accountBalance;
 var totalSpend = 0;
 var monthlySpend = 0;
 var earned = 0;
+var loadProgressBar = function(accountBalance1, accountBalance){
+    if(accountBalance <= 200){
+        $('#jqmeter-container1').jQMeter({
+            goal: ''+accountBalance1,
+            raised: ''+accountBalance,
+            meterOrientation: 'horizontal',     
+            height: '50px',
+            barColor: 'red'
+        })
+    }else{
+    $('#jqmeter-container1').jQMeter({
+        goal: ''+accountBalance1,
+        raised: ''+accountBalance,
+        meterOrientation: 'horizontal',     
+        height: '50px'
+    })
+}
+}
 var addToSummarySpend = function(moneySpend, reason){
     totalSpend = totalSpend + parseInt(moneySpend);
     $('.spendings-section #totalMoneySpend').html( "" + totalSpend);
@@ -21,6 +40,7 @@ var addToSummaryIncome  = function(moneyEarned, reason){
     $('.income-section .content').append($itemToAppend);
 }
 $(document).ready(function () {
+    
     // here you enter your salary and the window fades out
     $("#continue2").on("click", function () {
         // validation
@@ -33,9 +53,11 @@ $(document).ready(function () {
                 left: "+=50",
                 height: "toggle"
             }, 500)
+            accountBalance1 = $('#salary').val();
             accountBalance = $('#salary').val();
             $('#balance').html(accountBalance + "BGN");
         }
+        loadProgressBar(accountBalance1,accountBalance);
     });
 
     $('#spended').on("click", function () {
@@ -56,6 +78,7 @@ $(document).ready(function () {
             "BGN " + "for " + $reason + "</div>");
             accountBalance = parseInt(accountBalance) - parseInt($spendedMoney);
             $('#balance').html(accountBalance + "BGN");
+            loadProgressBar(accountBalance1,accountBalance);   
             if(accountBalance <= 100){
                 $('.overlay').css({'visibility': 'visible',
                  'opacity': '1'});                 
@@ -90,7 +113,8 @@ $(document).ready(function () {
                  $('.popup').css('display', 'block');         
                            
             }
-            addToSummaryMontly($spendedMoney, $reason);      
+            addToSummaryMontly($spendedMoney, $reason);  
+            loadProgressBar(accountBalance1,accountBalance);    
         }
 
     })
@@ -114,10 +138,10 @@ $(document).ready(function () {
             accountBalance = parseInt(accountBalance) + parseInt($spendedMoney);
             $('#balance').html(accountBalance + "BGN");
             addToSummaryIncome($spendedMoney, $reason);
+            loadProgressBar(accountBalance1,accountBalance);
         }                  
        
     })
-    $(".progress-bar").loading();	
 })
     //error message reset
     $('#mothlySpendingsVal').on("keypress", function () {

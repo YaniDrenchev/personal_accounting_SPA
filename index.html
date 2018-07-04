@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/popUp.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/jQuery-plugin-progressbar.css">
+
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
 
@@ -26,7 +26,7 @@
 <!-- Introduction and salary input -->
 
 <body>
-    <!-- <header>
+    <header>
         <div class="header-container">
             <div class="header">
                 <h1 id="intro">Hello, </h1>
@@ -43,7 +43,7 @@
             <p class="error">Please enter a valid salary</p>
             <a class="button1" id="continue2">Continue</a>
         </div>
-    </header> -->
+    </header>
     <!-- Main page -->
     <header>
         <div class="main-header">
@@ -54,7 +54,7 @@
     <aside class="left-aside">
         <h1>Your account balance</h1>
         <div class="odometer" id="balance">1000</div>
-        <div class="progress-bar" data-percent="100" data-duration="1000" data-color="#ccc,red"></div>
+        <div id="jqmeter-container1"class="jqumeter"></div>
         <div class="transactions">
             <div id="transactions_history">
             </div>
@@ -66,7 +66,7 @@
                 <form action="">
                     <div class="wrap center">
                         <div class="wrap-label">
-                            <label for="name">Maby you won from the lotary?</label>
+                            <label for="name">Maybe you won from the lottery?</label>
                             <p class="iconicfill-pen-alt2"></p>
                         </div>
                         <input type="text" id="incomeVal" x placeholder="1500lv">
@@ -88,7 +88,7 @@
                 <form action="">
                     <div class="wrap center">
                         <div class="wrap-label">
-                            <label for="name">For what have you spend your money</label>
+                            <label for="name">What do you spend your money for?</label>
                             <p class="iconicfill-pen-alt2"></p>
                         </div>
                         <input type="text" id="spendedMoney" placeholder="50lv">
@@ -99,7 +99,7 @@
                                 <option value="" hidden>Choose reason</option>
                                 <option value="1">Food</option>
                                 <option value="2">Car</option>
-                                <option value="2">Unessesary things</option>
+                                <option value="2">Unnecessary things</option>
                             </select>
                         </div>
                         <a class="button1" id="spended">Add</a>
@@ -174,15 +174,10 @@
                 </div>
             </div>
         </section>
-        <div class="progress">
-            <div class="progress-bar" data-percent="1" data-duration="1000" data-color="#ccc,red"></div>
-            <div class="progress-bar" data-percent="0" data-duration="1000" data-color="#ccc,red"></div>
-            <div class="progress-bar" data-percent="0" data-duration="1000" data-color="#white,green"></div>
-        </div>
     </main>
-    <!-- Login Page -->
+    <!-- Main content end -->
     <!-- Start Page -->
-    <!-- <div class="login-page">
+    <div class="login-page">
         <div class="form">
             <h1>Hello, I am your personal accounting assistant</h1>
             <h2>Please tell me who you are</h2>
@@ -193,8 +188,8 @@
                 <a class="button1" id="continue">Contiue</a>
             </form>
         </div>
-    </div> -->
-
+    </div>
+    <!-- Start page end -->
     <footer>
         <div class="footer">
             <div id="button"></div>
@@ -207,12 +202,14 @@
             </div>
         </div>
     </footer>
+  
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://www.gerardolarios.com/plugins-and-tools/jqmeter/js/jqmeter.min.js"></script>   
     <script src="js/odometer.min.js"></script>
     <script src="js/login.js"></script>
     <script src="js/main.js"></script>
     <script src="js/inputs.js"></script>
-    <script src="js/jQuery-plugin-progressbar.js"></script>
+   
 </body>
 
 </html>
